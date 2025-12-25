@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Lagu Favorit Kita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stars"></div>
+<!-- Popup -->
+    <div class="popup" id="popup">
+        <span class="popup-icon">🎵</span>
+        <span class="popup-text">Our Playlist</span>
+    </div>
+
+<!-- ================================== HALAMAN 2 ================================== -->
+
+<section class="section-center">
+
+<!-- Falling Hearts -->
+    <div class="hearts-container"></div>
+
+    <div class="container">
+        <h1 class="title">Lagu Favorit Kita<span class="title-icon">🎶</span>
+        </h1>
+    <p class="subtitle">Setiap lagu punya cerita dan kenangan tersendiri</p>
+
+    <div class="cards">
+
+    <div class="card">
+            <div class="album pink">❤️</div>
+            <h3>Perfect</h3>
+            <p>Ed Sheeran</p>
+            <button class="play-btn" onclick="playSong(0)">▶ Play Song</button>
+    </div>
+
+     <div class="card center">
+            <div class="album purple">❤️</div>
+            <h3>A Thousand Years</h3>
+            <p>Christina Perri</p>
+            <button class="play-btn active" onclick="playSong(1)">⏸ Pause</button>
+    </div>
+
+    <div class="card">
+            <div class="album red">❤️</div>
+            <h3>All of Me</h3>
+            <p>John Legend</p>
+            <button class="play-btn" onclick="playSong(2)">▶ Play Song</button>
+     </div>
+    </div>
+
+<!-- Audio -->
+<audio id="audio0" src="musix/Hindia_-_everything_u_are_(mp3.pm).mp3"></audio>
+<audio id="audio1" src="musix/Hindia_-_Cincin_(mp3.pm).mp3"></audio>
+<audio id="audio2" src="allofme.mp3"></audio>
+
+
+</section>
+
+
+<!-- ================================== HALAMAN 3 ================================== -->
+
+<section class="section-center" id="cerita-kita">
+    <div class="story-wrapper">
+
+<!-- Header -->
+    <div class="story-header">
+        <h1>Cerita Kita</h1>
+        <p>Setiap momen bersama adalah kenangan yang tidak akan pernah terlupakan</p>
+    </div>
+
+<!-- Story Card -->
+  <div class="story-card">
+
+<!-- Left Content -->
+    <div class="story-text">
+      <span class="badge">❤️ Kenangan #1</span>
+
+        <h2>Pertama kali ketemu <span>💫</span></h2>
+
+        <p class="desc">
+        Moment ketika mata kita pertama kali bertemu, dan dunia serasa berhenti</p>
+
+        <div class="meta">
+            <div>📅 14 Februari 2023</div>
+            <div>📍 Coffee Shop Favorite</div>
+        </div>
+    </div>
+<!-- Right Image -->
+    <div class="story-image">
+    <img src="Gambar/1dd54077f1febf72dacb96c52296b043.jpg" alt="Cerita Kita">
+    </div>
+    </div>
+
+</section>
+
+
+
+
+<!-- ================================== HALAMAN 4 ================================== -->
+
+<section class="section-center" id="cerita-kita-2">
+    <div class="story-wrapper">
+
+<!-- Story Card -->
+  <div class="story-card">
+
+<!-- Left Image -->
+    <div class="story-image">
+    <img src="Gambar/1dd54077f1febf72dacb96c52296b043.jpg" alt="Cerita Kita">
+    </div>
+<!-- Right Content -->
+<div class="story-text">
+      <span class="badge">❤️ Kenangan #2</span>
+
+        <h2>Moment Paling Indah<span>💫</span></h2>
+
+        <p class="desc">
+        Moment ketika mata kita pertama kali bertemu, dan dunia serasa berhenti</p>
+
+        <div class="meta">
+            <div>📅 14 Februari 2023</div>
+            <div>📍 Coffee Shop Favorite</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ================================== HALAMAN 5 ================================== -->
+
+<section class="section-center" id="cerita-kita-3">
+    <div class="story-wrapper">
+
+<!-- Story Card -->
+  <div class="story-card">
+
+<!-- Left Content -->
+    <div class="story-text">
+      <span class="badge">❤️ Kenangan #3</span>
+
+        <h2>Pertama kali ketemu <span>💫</span></h2>
+
+        <p class="desc">
+        Moment ketika mata kita pertama kali bertemu, dan dunia serasa berhenti</p>
+
+        <div class="meta">
+            <div>📅 14 Februari 2023</div>
+            <div>📍 Coffee Shop Favorite</div>
+        </div>
+    </div>
+<!-- Right Image -->
+    <div class="story-image">
+    <img src="Gambar/1dd54077f1febf72dacb96c52296b043.jpg" alt="Cerita Kita">
+    </div>
+    </div>
+
+</section>
+
+
+
+<!-- ================================== HALAMAN 6 ================================== -->
+
+<section class="section-center" id="cerita-kita-4">
+  <div class="story-wrapper">
+    <div class="story-card image-only">
+      <img src="gambar kenangan/Happy 1st anniversary, sayang.png" alt="Cerita Kita">
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================== HALAMAN 7 ================================== -->
+
+<section class="story-section" id="closing-section">
+  <div class="closing-card">
+
+    <div class="closing-header">
+      <span class="icon-left">❤️</span>
+
+      <h2>
+        Terima Kasih untuk Satu<br>
+        Tahun yang Berarti
+      </h2>
+
+      <span class="icon-right">🎉</span>
+    </div>
+
+    <p class="closing-text">
+      Terima kasih sudah hadir dan bertahan selama satu tahun ini.
+      Terima kasih untuk setiap kesabaran saat aku lelah, setiap tawa di tengah
+      hal-hal sederhana, dan setiap usaha kecil yang mungkin tidak selalu
+      terlihat tapi selalu terasa. Bersamamu, aku belajar bahwa kebahagiaan
+      bukan tentang kesempurnaan, tapi tentang saling menerima dan tetap memilih
+      satu sama lain.
+      <br><br>
+      Satu tahun ini mungkin hanya awal, tapi kenangan dan pelajaran yang kita
+      lalui sudah sangat berarti bagiku. Terima kasih sudah menjadi bagian
+      penting dari perjalananku, semoga langkah kita ke depan selalu searah dan
+      penuh makna.
+    </p>
+
+  </div>
+</section>
+
+
+
+<!-- ================================== HALAMAN 8 ==================================  -->
+
+<section class="final-section">
+  <h1 class="final-title">
+    Setiap kenangan kita<br>
+    tersimpan <span>di sini</span>,<br>
+    <span>selamanya</span>
+  </h1>
+
+  <a 
+    href="https://drive.google.com/DRIVE_LINK_KAMU"
+    target="_blank"
+    class="love-button"
+  >
+    ❤️
+    <span class="love-text">Click</span>
+  </a>
+
+  <p class="final-note">
+    Terima kasih sudah menjadi bagian dari hidupku ❤️
+  </p>
+</section>
+
+
+<p class="made-with">
+  Made with <span>AI</span> for <span>Us</span>
+</p>
+
+<script src="script.js"></script>
+</body>
+
+</html>
