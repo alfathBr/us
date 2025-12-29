@@ -125,9 +125,23 @@ const popupObserver = new IntersectionObserver((entries) => {
     }
 
     // === HALAMAN 8 (FINAL) ===
-    if (entry.target === finalSection && entry.isIntersecting) {
-      popup.classList.add("hide");
-    }
+    if (entry.target === finalSection) {
+
+  // MASUK HALAMAN 8 → HILANG
+  if (entry.isIntersecting) {
+    popup.classList.add("hide");
+  }
+
+  // KELUAR HALAMAN 8 → MUNCUL LAGI (OUR STORY)
+  else {
+    currentMode = "story";
+    popup.classList.remove("hide");
+    popupIcon.textContent = "💖";
+    popupText.textContent = "Our Story";
+  }
+
+}
+
 
   });
 }, {
