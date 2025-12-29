@@ -100,67 +100,60 @@ for (let i = 0; i < STAR_COUNT; i++) {
   starsContainer.appendChild(star);
 }
 
-let isClosing = false;
 
+// ================= POPUP MODE HANDLER =================
 
-const popupIcon = document.querySelector('.popup-icon');
-const popupText = document.querySelector('.popup-text');
+const popup = document.getElementById("popup");
+const popupIcon = document.querySelector(".popup-icon");
+const popupText = document.querySelector(".popup-text");
 
-const ceritaSections = document.querySelectorAll(
-  '#cerita-kita, #cerita-kita-2, #cerita-kita-3, #cerita-kita-4'
-);
+const playlistSection = document.getElementById("playlist-section");
+const finalSection = document.getElementById("final-section");
 
-let ceritaVisibleCount = 0;
+let currentMode = "playlist";
 
-const observer = new IntersectionObserver((entries) => {
+// Observer untuk playlist & final
+const popupObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
 
-  if (isClosing) return; // ⬅️ STOP total kalau sudah masuk closing
-
-    if (entry.isIntersecting) {
-      ceritaVisibleCount++;
-    } else {
-      ceritaVisibleCount--;
+    // === HALAMAN 2 (PLAYLIST) ===
+    if (entry.target === playlistSection && entry.isIntersecting) {
+      currentMode = "playlist";
+      popup.classList.remove("hide");
+      popupIcon.textContent = "🎵";
+      popupText.textContent = "Our Playlist";
     }
 
-    // clamp supaya tidak minus
-    ceritaVisibleCount = Math.max(0, ceritaVisibleCount);
-
-    if (ceritaVisibleCount > 0) {
-      popupIcon.textContent = '💖';
-      popupText.textContent = 'Our Story';
-    } else {
-      popupIcon.textContent = '🎵';
-      popupText.textContent = 'Our Playlist';
+    // === HALAMAN 8 (FINAL) ===
+    if (entry.target === finalSection && entry.isIntersecting) {
+      popup.classList.add("hide");
     }
-  });
-}, {
-  threshold: 0.4
-});
-
-ceritaSections.forEach(section => observer.observe(section));
-
-// ===== HILANGKAN POPUP SAAT CLOSING =====
-const popup = document.getElementById('popup');
-const closingSection = document.getElementById('closing-section');
-
-const closingObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-
-
-   if (entry.isIntersecting) {
-  isClosing = true;          // ⬅️ KUNCI
-  popup.classList.add('hide');
-} else {
-  isClosing = false;
-  popup.classList.remove('hide');
-}
 
   });
 }, {
-  threshold: 0.3
+  threshold: 0.5
 });
 
-closingObserver.observe(closingSection);
+popupObserver.observe(playlistSection);
+popupObserver.observe(finalSection);
 
+// Scroll handler untuk halaman 3–7
+window.addEventListener("scroll", () => {
+
+  const playlistRect = playlistSection.getBoundingClientRect();
+  const finalRect = finalSection.getBoundingClientRect();
+
+  // Sudah lewat playlist & belum masuk final
+  if (
+    playlistRect.bottom < window.innerHeight * 0.6 &&
+    finalRect.top > window.innerHeight * 0.6
+  ) {
+    if (currentMode !== "story") {
+      currentMode = "story";
+      popup.classList.remove("hide");
+      popupIcon.textContent = "💖";
+      popupText.textContent = "Our Story";
+    }
+  }
+});
 
