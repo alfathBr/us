@@ -123,6 +123,7 @@ body{
     padding:40px;
     border-radius:18px;
     box-shadow:0 0 25px rgba(111, 53, 118, 0.6);
+    overflow: hidden;
 }
 
 .card.center{
@@ -132,15 +133,25 @@ body{
 .album{
     height:200px;
     border-radius:15px;
+    overflow: hidden;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:50px;
 }
 
-.pink{background:#c13c77;}
-.purple{background:#8b4dd3;}
-.red{background:#c43b45;}
+.pink{background-image: url(musix/everything\ you\ are.jpg);
+
+}
+.purple{background-image: url(musix/a\ \ thousand\ years.jpeg);
+
+}
+.red{background-image: url(musix/ab67616d00001e02bc6ee0a7c05af5d905d9a7ac.jpeg);
+
+}
 
 h3{
     margin-top:15px;
